@@ -17,7 +17,7 @@ export const ForgotPasswordModal = ({ }) => {
                             </button>
                         </form>
                     </div>
-                    <div className='px-20'>
+                    <div className='md:px-20'>
                         <h3 className="font-bold text-center text-2xl mb-3">Forgot Your Password?</h3>
                         <form>
                             <div className="mt-6">
@@ -47,9 +47,9 @@ export const ForgotPasswordModal = ({ }) => {
                         </form>
                     </div>
 
-                    <div className="modal-action mx-20 mb-10">
+                    <div className="modal-action md:mx-20 mb-10">
                         <form method="dialog " className='w-full'>
-                            <button className="w-full btn btn-primary hover:btn-secondary text-white" onClick={handleCloseModal}>Close</button>
+                            <button className="w-full btn btn-primary hover:btn-secondary text-white" onClick={handleCloseModal}>Send Request</button>
                         </form>
                     </div>
                 </div>
