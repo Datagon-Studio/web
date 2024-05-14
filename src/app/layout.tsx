@@ -26,8 +26,7 @@ export default function RootLayout({
           <ThemeToggle>
             {children}
           </ThemeToggle>
-
-          <script src="./node_modules/preline/dist/preline.js"></script>
+          {/* <script src="./node_modules/preline/dist/preline.js"></script> */}
         </body>
       </html>
 

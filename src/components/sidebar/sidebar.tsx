@@ -13,6 +13,7 @@ import ThemeSwitch from '@/themeConfig/themeSwitch'
 import { RiCloseLargeLine } from "react-icons/ri";
 import  {useSelectedLayoutSegment} from "next/navigation";
 import Link from 'next/link'
+import Image from 'next/image'
 
 type Props = {
     children: React.ReactNode,
@@ -82,7 +83,7 @@ export default function Sidebar(props: Props) {
                                     </Transition.Child>
                                     <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-primary px-6 pb-4">
                                         <div className="flex h-16 shrink-0 items-center my-4 flex justify-center">
-                                            <img
+                                            <Image
                                                 className="h-16 w-auto filter invert blend-screen"
                                                 src={props.image}
                                                 alt="logo"
@@ -131,7 +132,7 @@ export default function Sidebar(props: Props) {
                 <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
                     <div className="flex grow flex-col gap-y-5 overflow-y-auto  bg-primary px-6 pb-4">
                         <div className="flex h-16 shrink-0 items-center my-4 flex justify-center ">
-                            <img
+                            <Image
                                 className="h-16 w-auto filter invert blend-screen"
                                 src={props.image}
                                 alt="logo"
@@ -205,10 +206,12 @@ export default function Sidebar(props: Props) {
                                 <Menu as="div" className="relative bg-white dark:bg-neutral-700 border border-gray-200  dark:border-gray-600 rounded-2xl p-1 ">
                                     <Menu.Button className="-m-1.5 flex items-center p-1.5">
                                         <span className="sr-only">Open user menu</span>
-                                        <img
+                                        <Image
                                             className="h-8 w-8 rounded-full bg-gray-50"
-                                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                            src="/user.png"
                                             alt=""
+                                            width={30}
+                                            height={30}
                                         />
                                         <span className="hidden lg:flex lg:items-center">
                                             <span className="ml-4 text-sm font-semibold leading-6 text-gray-900 dark:text-white" aria-hidden="true">
