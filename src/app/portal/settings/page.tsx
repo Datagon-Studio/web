@@ -1,11 +1,12 @@
+import SettingsIndex from './settingsIndex';
 
-import React from 'react'
-
-export default function Settings() {
+const Settings = () => {
+ 
   return (
-    <div  className="">
-        Settings
-        </div>
+    <>
+  <SettingsIndex/>
+    </>
   )
 }
 
+export default Settings;

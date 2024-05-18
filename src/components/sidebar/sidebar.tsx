@@ -294,7 +294,7 @@ export default function Sidebar(props: Props) {
                         </div>
                     </div>
 
-                    <main className="py-6  bg-gray-100 rounded-2xl dark:bg-warning w-full" style={{ height: `${newheight}px` }} >
+                    <main className="py-6  bg-gray-100 rounded-2xl dark:bg-warning w-full h-[auto]" style={{ minHeight: `${newheight}px` }} >
                         <div className="px-4 sm:px-4 lg:px-4">
                             {props.children}
                         </div>
