@@ -1,8 +1,14 @@
 "use client"
 import React, { useState } from 'react'
 import Link from 'next/link';
+import { useDispatch , useSelector} from 'react-redux';
+import { setUserStatus } from '@/core/slice/signUpUserVerification';
+import { RootState } from '@/core/store';
+
 
 export const SignUpForm = () => {
+    const dispatch = useDispatch();
+    const userStatus = useSelector((state: RootState) => state.user.status);
 
     const [formData, setFormData] = useState({
         email: '',
@@ -22,7 +28,9 @@ export const SignUpForm = () => {
     const handleClick = (e:any) => {
         e.preventDefault(); 
         if (formData.email && formData.password) {
-            window.location.href = '/portal';
+            dispatch(setUserStatus('unverified'));
+            localStorage.setItem("filledProfile",userStatus)
+            window.location.href = '/portal/assessment';
         }
     };
 

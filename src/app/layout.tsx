@@ -1,18 +1,19 @@
-import type { Metadata } from "next";
-import { Inter , Poppins } from "next/font/google";
+// import type { Metadata } from "next";
+"use client"
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeToggle } from "../themeConfig/themeProvider";
-
-// import { Provider } from "react-redux";
-// import { store } from "@/core/store";
+import App from "next/app";
+import { ThemeToggle } from "@/themeConfig/themeProvider";
+import { Provider } from "react-redux";
+import { store } from "@/core/store";
 
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "E-notebook",
-  description: "",
-};
+// export const metadata: Metadata = {
+//   title: "E-notebook",
+//   description: "",
+// };
 
 export default function RootLayout({
   children,
@@ -23,13 +24,13 @@ export default function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning>
         <body className={inter.className}>
-          <ThemeToggle>
-            {children}
-          </ThemeToggle>
-          {/* <script src="./node_modules/preline/dist/preline.js"></script> */}
+          <Provider store={store}>
+            <ThemeToggle>
+              {children}
+            </ThemeToggle>
+          </Provider>
         </body>
       </html>
-
     </>
   );
 }

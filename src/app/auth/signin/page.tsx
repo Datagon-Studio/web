@@ -7,7 +7,6 @@ import { SignInForm } from './signInForm'
   return (
    <Auth image={img}>
     <SignInForm/>
-   
    </Auth>
   )
 }

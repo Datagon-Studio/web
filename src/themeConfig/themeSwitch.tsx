@@ -13,7 +13,7 @@ export default function ThemeSwitch() {
     useEffect(() => setMounted(true), [])
 
     if (!mounted) return (
-        <div className="flex justify-end m-5 ">
+        <div className="flex justify-end ">
             <RxSwitch size={20} />
         </div>
     )
@@ -21,7 +21,7 @@ export default function ThemeSwitch() {
     if (resolvedTheme === 'dark') {
         return (
             <div className="flex justify-end m-5 ">
-                <button className=" bg-white rounded-full text-black shadow-lg items-center p-3" onClick={() => setTheme('light')}>
+                <button className=" bg-white rounded-full text-black shadow-lg items-center " onClick={() => setTheme('light')}>
                     <FiSun size={20} className="" />
                 </button>
             </div>
@@ -30,8 +30,8 @@ export default function ThemeSwitch() {
 
     if (resolvedTheme === 'light') {
         return (
-            <div className="flex justify-end m-5 ">
-                <button className=" bg-white rounded-full text-black shadow-lg items-center p-3" onClick={() => setTheme('dark')}>
+            <div className="flex justify-end  ">
+                <button className=" bg-white rounded-full text-black shadow-lg items-center " onClick={() => setTheme('dark')}>
                     <FiMoon size={20} className="" />
                 </button>
             </div>

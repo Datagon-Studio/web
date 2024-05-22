@@ -1,6 +1,6 @@
 "use client"
 import { Fragment, useEffect, useState } from 'react'
-import { Dialog,  Transition } from '@headlessui/react'
+import { Dialog, Transition } from '@headlessui/react'
 import { FolderIcon } from '@heroicons/react/24/outline'
 import { TbLayoutDashboard } from "react-icons/tb";
 import { RiSurveyLine } from "react-icons/ri";
@@ -30,11 +30,11 @@ function classNames(...classes: string[]) {
 export default function Sidebar(props: Props) {
 
     const { height } = useWindowDimensions();
-    const [newheight,setNewHeight] = useState(0)
+    const [newheight, setNewHeight] = useState(0)
 
     useEffect(() => {
         if (height) {
-            setNewHeight(height - 20) 
+            setNewHeight(height - 20)
         }
     }, [newheight])
 
@@ -132,47 +132,47 @@ export default function Sidebar(props: Props) {
                                                     </ul>
                                                 </li>
                                                 <li className='absolute bottom-5 left-0 '>
-                                    <div className="dropdown dropdown-top w-full ">
+                                                    <div className="dropdown dropdown-top w-full ">
 
-                                        <div tabIndex={0} role="button" className="btn m-1 btn-md mx-3 w-64 hover:bg-info bg-gray-300 dark:bg-neutral-600 border-0 text-white">
-                                            <div className="flex items-center justify-between gap-16 ">
-                                                <div className='flex items-center '>
-                                                    <Image
-                                                        className="h-8 w-8 rounded-md me-4 bg-gray-50"
-                                                        src="/user.png"
-                                                        alt=""
-                                                        width={30}
-                                                        height={30}
-                                                    />
-                                                    <div>Nana Boafo</div>
-                                                </div>
+                                                        <div tabIndex={0} role="button" className="btn m-1 btn-md mx-3 w-64 hover:bg-info bg-gray-300 dark:bg-neutral-600 border-0 text-white">
+                                                            <div className="flex items-center justify-between gap-16 ">
+                                                                <div className='flex items-center '>
+                                                                    <Image
+                                                                        className="h-8 w-8 rounded-md me-4 bg-gray-50"
+                                                                        src="/user.png"
+                                                                        alt=""
+                                                                        width={30}
+                                                                        height={30}
+                                                                    />
+                                                                    <div>Nana Boafo</div>
+                                                                </div>
 
-                                                <div><MdOutlineKeyboardArrowUp /></div>
-                                            </div>
-                                        </div>
-                                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-white dark:text-white dark:bg-neutral-600 rounded-box w-64 mx-3">
-                                            <li>
-                                                <div className='text-sm text-black dark:text-white   flex justify-between items-center'>
-                                                    <div className='py-2'>Dark</div>
-                                                    <ThemeSwitch />
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div className=" flex justify-between text-black  dark:text-white items-center">
-                                                    <div className='py-2'> User Profile </div>
-                                                    <div className=''> <LuUser size={20} className="text-black dark:text-gray-300" /></div>
-                                                </div>
-                                            </li>
+                                                                <div><MdOutlineKeyboardArrowUp /></div>
+                                                            </div>
+                                                        </div>
+                                                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-white dark:text-white dark:bg-neutral-600 rounded-box w-64 mx-3">
+                                                            <li>
+                                                                <div className='text-sm text-black dark:text-white   flex justify-between items-center'>
+                                                                    <div className=''>Dark</div>
+                                                                    <ThemeSwitch />
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div className=" flex justify-between text-black  dark:text-white items-center">
+                                                                    <div className='py-2'> User Profile </div>
+                                                                    <div className=''> <LuUser size={20} className="text-black dark:text-gray-300" /></div>
+                                                                </div>
+                                                            </li>
 
-                                            <li>
-                                                <div className=" flex justify-between dark:text-white text-black items-center">
-                                                    <div className='py-2'> Sign out </div>
-                                                    <PiSignOut size={20} className="text-black dark:text-gray-300" />
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
+                                                            <li>
+                                                                <div className=" flex justify-between dark:text-white text-black items-center">
+                                                                    <div className='py-2'> Sign out </div>
+                                                                    <PiSignOut size={20} className="text-black dark:text-gray-300" />
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -243,14 +243,14 @@ export default function Sidebar(props: Props) {
                                         </div>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-white dark:text-white dark:bg-neutral-600 rounded-box w-64 mx-3">
                                             <li>
-                                                <div className='text-sm text-black dark:text-white   flex justify-between items-center'>
-                                                    <div className='py-2'>Dark</div>
+                                                <div className='text-sm text-black dark:text-white flex justify-between items-center'>
+                                                    <div className=''>Dark</div>
                                                     <ThemeSwitch />
                                                 </div>
                                             </li>
                                             <li>
                                                 <div className=" flex justify-between text-black  dark:text-white items-center">
-                                                    <div className='py-2'> User Profile </div>
+                                                    <div className='py-2'> <a href="/portal/userProfile">User Profile</a> </div>
                                                     <div className=''> <LuUser size={20} className="text-black dark:text-gray-300" /></div>
                                                 </div>
                                             </li>

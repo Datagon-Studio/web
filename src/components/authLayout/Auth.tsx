@@ -18,18 +18,18 @@ export const Auth = ({ image, children }: AuthProps) => {
                     </div>
                     {/* Second image */}
                     <div className="absolute inset-0 p-5">
-                        <Image src="/logo.png" alt="logo"  width={70} height={70}/>
+                        <Image src="/logo.png" alt="logo" width={70} height={70} />
                     </div>
                 </div>
-                <div className="bg-white dark:bg-warning">
-                    <div className='p-5'>
-                    <ThemeSwitch />
-                        </div>
+                <div className="bg-white dark:bg-warning ">
+                    <div className='p-5 '>
+                        <ThemeSwitch />
+                    </div>
+                    <div className='flex flex-col justify-center min-h-[700px] h-[auto]'>
                     {children}
+                    </div>
+                   
                 </div>
-                {/* <div>
-                new guy
-            </div> */}
             </div>
         </section>
     )

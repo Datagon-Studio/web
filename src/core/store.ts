@@ -1,16 +1,22 @@
-import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
+import { Action, configureStore, ThunkAction,combineReducers } from "@reduxjs/toolkit";
 import { userService } from "../services/user-service";
+import userReducer from "../core/slice/signUpUserVerification"
 
+const rootReducer = combineReducers({
+  [userService.reducerPath]: userService.reducer,
+  user: userReducer,
+});
+
+// Configure store with combined reducer
 export const store = configureStore({
-  reducer: {
-    [userService.reducerPath]: userService.reducer,
-  },
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(userService.middleware),
 });
 
+
 export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
+export type RootState = ReturnType<typeof rootReducer>;
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
   RootState,

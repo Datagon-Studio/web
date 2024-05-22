@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import SettingsProfileForm from './settingsProfileForm';
 import SettingsInstitutionForm from './settingsInstitutionForm';
+import SettingsUserForm from './settingsUserForm';
 
 const SettingsIndex = () => {
 
@@ -19,12 +20,16 @@ const SettingsIndex = () => {
                     onClick={() => handleTabToggle(1)}>Profile</div>
                 <div className={activeTab == 2 ? "btn bg-primary w-[150px] text-center btn-sm  hover:bg-secondary border-0 text-white rounded-md" : "btn cursor-pointer w-[150px] btn-sm dark:bg-neutral-700 bg-white border-0 hover:bg-transparent"}
                     onClick={() => handleTabToggle(2)}>Institution</div>
+                <div className={activeTab == 3 ? "btn bg-primary w-[150px] text-center btn-sm  hover:bg-secondary border-0 text-white rounded-md" : "btn cursor-pointer w-[150px] btn-sm dark:bg-neutral-700 bg-white border-0 hover:bg-transparent"}
+                    onClick={() => handleTabToggle(3)}>User</div>
             </div>
             <>
-                {activeTab == 1 ? (
+                {activeTab === 1 ? (
                     <SettingsProfileForm />
-                ) : (
+                ) : activeTab === 2 ? (
                     <SettingsInstitutionForm />
+                ) : (
+                    <SettingsUserForm />
                 )}
             </>
         </section>
